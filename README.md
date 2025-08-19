@@ -1,4 +1,4 @@
-# Embedded Software Engineer – Coding Prep 🚀
+# Coding Prep 🚀
 
 This repo collects **LeetCode-style problems** and **low-level coding exercises** that are most relevant for **Embedded Software Development interviews**.  
 
