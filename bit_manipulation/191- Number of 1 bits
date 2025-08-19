@@ -1,0 +1,46 @@
+Three solutions possible:
+1. Continuous division by 2 and accumulation of remainders: simple and intuitive
+2. Using bit manipulation: Bitwise AND the number to get access individual bits and right shift to handle consequent bits
+3. Brian Kernighan’s Algorithm: clear the lowest set bit and count how many times it has been cleared
+Solution 2: memory = O(1) and time = O(n)
+
+          class Solution {
+          public:
+              int hammingWeight(int n) {
+                  int count=0;
+                  if(n==0)
+                      return 0;
+                  
+                  while(n!=0)
+                  {
+                      if((n&1) == 1) //braces important
+                          count += 1;
+                      
+                      n = n>>1;
+                  }
+          
+                  return count;
+              }
+          };
+
+
+Solution 3: lesser number of iterations
+
+        class Solution {
+        public:
+            int hammingWeight(int n) {
+                int count=0;
+                if(n==0)
+                    return 0;
+                
+                while(n!=0)
+                {
+                    n = n & (n-1);
+                    count++;
+                }
+        
+                return count;
+            }
+        };
+
+
