@@ -1,0 +1,16 @@
+class Solution {
+public:
+    int reverseBits(int n) {
+        int bit_place = 31;
+        int32_t result = 0;
+
+        while(n > 0)
+        {
+            result = result | ((n&1) << bit_place);
+            n = n>>1;
+            bit_place--;
+        }
+
+        return result;
+    }
+};
