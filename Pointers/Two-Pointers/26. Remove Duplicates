@@ -1,0 +1,19 @@
+int removeDuplicates(int* nums, int numsSize) {
+
+    int k = 1;
+    int* ptr;
+    int* nptr = nums;
+    for(ptr = nptr+1; ptr < nums+numsSize; ptr++)
+    {
+        if((*nptr != *ptr) && (*nptr < *ptr))
+        {
+            *(nptr+1) = *ptr;
+            k++;
+            nptr ++;
+            
+        }
+    }
+
+    return k;
+    
+}
